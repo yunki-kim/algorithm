@@ -1,17 +1,7 @@
-import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 class Solution {
     public int[] solution(int n) {
-        ArrayList<Integer> answerList = new ArrayList<>();
-        for (int i = 1; i <= Math.sqrt(n); i++) {
-            if (n % i == 0) {
-                answerList.add(i);
-                if (n / i != i) answerList.add(n / i);
-            }
-        }
-        return answerList.stream()
-                .mapToInt(i -> i)
-                .sorted()
-                .toArray();
+        return IntStream.rangeClosed(1, n).filter(i -> (n % i == 0)).toArray();
     }
 }
