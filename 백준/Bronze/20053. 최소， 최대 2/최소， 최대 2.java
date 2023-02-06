@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -12,17 +11,17 @@ public class Main {
         int T = Integer.parseInt(br.readLine());
         for (int i = 0; i < T; i++) {
             int N = Integer.parseInt(br.readLine());
-            int[] numbers = new int[N];
 
+            int min = Integer.MAX_VALUE;
+            int max = Integer.MIN_VALUE;
             StringTokenizer st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < numbers.length; j++) {
-                numbers[j] = Integer.parseInt(st.nextToken());
+            for (int j = 0; j < N; j++) {
+                int num = Integer.parseInt(st.nextToken());
+                if (num < min) min = num;
+                if (num > max) max = num;
             }
-
-            Arrays.sort(numbers);
-            sb.append(numbers[0]).append(" ").append(numbers[numbers.length - 1]).append("\n");
+            sb.append(min).append(" ").append(max).append("\n");
         }
-
         System.out.print(sb);
         br.close();
     }
