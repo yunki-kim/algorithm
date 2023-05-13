@@ -12,7 +12,7 @@ public class Main {
             iArr[i] = Integer.parseInt(iStr.substring(i, i + 1));
         }
 
-        // 삽입 정렬을 이용한 내림차순 정렬
+        // 선택 정렬을 이용한 내림차순 정렬
         for (int i = 0; i < iStr.length(); i++) {
             int max = i;
             for (int j = i + 1; j < iStr.length(); j++) {
